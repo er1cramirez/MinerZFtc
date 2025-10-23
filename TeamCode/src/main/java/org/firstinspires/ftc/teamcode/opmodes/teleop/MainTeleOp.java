@@ -165,6 +165,7 @@ public class MainTeleOp extends CommandOpMode {
      */
     @Override
     public void run() {
+        driverGamepad.readButtons();
         // Run the command scheduler (handles all commands and subsystems)
         super.run();
         
@@ -220,6 +221,11 @@ public class MainTeleOp extends CommandOpMode {
         telemetry.addLine("=== CONTROLS ===");
         telemetry.addLine("START: Toggle Field-Centric");
         telemetry.addLine("BACK: Reset Heading");
+
+//        Add joystick info if desired
+        telemetry.addData("Left Stick", "X: %.2f, Y: %.2f",
+            -driverGamepad.getLeftX(), -driverGamepad.getLeftY());
+        telemetry.addData("Right Stick X", "%.2f", -driverGamepad.getRightX());
         
         // Update the display
         telemetry.update();

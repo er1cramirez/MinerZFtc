@@ -21,9 +21,9 @@ public final class DriveConstants {
      * True = motor runs in reverse
      */
     public static final boolean INVERT_FRONT_LEFT = false;
-    public static final boolean INVERT_FRONT_RIGHT = true;
+    public static final boolean INVERT_FRONT_RIGHT = false;
     public static final boolean INVERT_BACK_LEFT = false;
-    public static final boolean INVERT_BACK_RIGHT = true;
+    public static final boolean INVERT_BACK_RIGHT = false;
     
     // ==================== Physical Properties ====================
     

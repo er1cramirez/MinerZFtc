@@ -4,7 +4,7 @@ import com.arcrobotics.ftclib.command.SubsystemBase;
 import com.arcrobotics.ftclib.drivebase.MecanumDrive;
 import com.arcrobotics.ftclib.geometry.Pose2d;
 import com.arcrobotics.ftclib.geometry.Rotation2d;
-import com.arcrobotics.ftclib.hardware.RevIMU;
+//import com.arcrobotics.ftclib.hardware.RevIMU;
 import com.arcrobotics.ftclib.hardware.motors.Motor;
 import com.arcrobotics.ftclib.hardware.motors.MotorEx;
 import com.qualcomm.robotcore.hardware.HardwareMap;
@@ -39,7 +39,7 @@ public class MecanumDriveSubsystem extends SubsystemBase {
     private final MotorEx backRight;
     
     private final MecanumDrive drive;
-    private final RevIMU imu;
+//    private final RevIMU imu;
     
     // Pinpoint Odometry Computer
     // NOTE: Uncomment and use the actual Pinpoint class when available
@@ -72,8 +72,8 @@ public class MecanumDriveSubsystem extends SubsystemBase {
         drive = new MecanumDrive(frontLeft, frontRight, backLeft, backRight);
         
         // Initialize IMU
-        imu = new RevIMU(hardwareMap, OdometryConstants.IMU_NAME);
-        imu.init();
+//        imu = new RevIMU(hardwareMap, OdometryConstants.IMU_NAME);
+//        imu.init();
         
         // Initialize Pinpoint
         initializePinpoint(hardwareMap);
@@ -249,7 +249,8 @@ public class MecanumDriveSubsystem extends SubsystemBase {
      * @return Heading in degrees (0-360, counterclockwise positive)
      */
     public double getHeading() {
-        return imu.getHeading();
+        return 0.0;
+//        return imu.getHeading();
     }
     
     /**
@@ -266,7 +267,7 @@ public class MecanumDriveSubsystem extends SubsystemBase {
      * This sets the current direction as the new "forward" (0 degrees).
      */
     public void resetHeading() {
-        imu.reset();
+//        imu.reset();
     }
     
     // ==================== Odometry Methods ====================
